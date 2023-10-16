@@ -17,7 +17,7 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // Permitir solicitudes desde cualquier origen (ajusta según tus necesidades)
-        config.addAllowedOrigin("http://localhost:4200");
+        config.addAllowedOrigin("http://164.90.153.70:4200");
 
 
         // Permitir solicitudes con estos métodos

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import com.Proyecto.Avanzar.Services.service.DestacadoService;
 
-@CrossOrigin(origins = {"*"})
+@CrossOrigin(origins = {"http://164.90.153.70:4200"})
 @RestController
 @RequestMapping("/api/likes")
 public class DestacadosController {

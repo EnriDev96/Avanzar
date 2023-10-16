@@ -23,7 +23,7 @@ import java.security.Principal;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = {"*"})
+@CrossOrigin(origins = {"http://164.90.153.70:4200"})
 
 @RequestMapping("/api/login")
 public class AuthenticationController {

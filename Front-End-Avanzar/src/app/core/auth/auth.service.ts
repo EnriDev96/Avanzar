@@ -8,7 +8,7 @@ import baserUrl from './helper';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private _authenticated: boolean = false;
-  private apiUrl: "http://localhost:8080/api/login/usuarioActual";
+  private apiUrl: "http://164.90.153.70:8080/api/login/usuarioActual";
 
 
   /**
@@ -68,7 +68,7 @@ export class AuthService {
       return throwError('User is already logged in.');
     }
 
-    return this._httpClient.post('http://localhost:8080/api/login/generartoken', credentials).pipe(
+    return this._httpClient.post('http://164.90.153.70:8080/api/login/generartoken', credentials).pipe(
       switchMap((response: any) => {
 
         // Store the access token in the local storage
@@ -94,7 +94,7 @@ export class AuthService {
    */
   signInUsingToken(): Observable<any> {
     // Sign in using the token
-    return this._httpClient.post('http://localhost:8080/api/login/signInWithToken', {
+    return this._httpClient.post('http://164.90.153.70:8080/api/login/signInWithToken', {
       accessToken: this.accessToken,
     }).pipe(
       catchError(() =>
@@ -191,7 +191,7 @@ export class AuthService {
     if (token) {
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-      return this._httpClient.get<any>('http://localhost:8080/api/login/usuarioActual', { headers: headers }).pipe(
+      return this._httpClient.get<any>('http://164.90.153.70:8080/api/login/usuarioActual', { headers: headers }).pipe(
         catchError((error) => {
           if (error.status === 401) {
             // El token puede estar expirado o no válido

@@ -9,7 +9,7 @@ import { Publicacion } from '../models/publicaciones';
 })
 export class ComentarioService {
 
-    private baseUrl='http://localhost:8080/api/comentarios';
+    private baseUrl='http://164.90.153.70:8080/api/comentarios';
     constructor(private http: HttpClient) { }
 
    createCommit(c:Comentario):Observable<Comentario>{

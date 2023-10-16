@@ -25,17 +25,17 @@ import { RouterLink } from '@angular/router';
 
 })
 export class ModalPublicacionProductosComponent implements OnInit {
-   
+
 
     constructor(
         public matDialogRef: MatDialogRef<ModalPublicacionProductosComponent>,
         private _formBuilder: FormBuilder,
-    
+
     ) {
     }
 
     ngOnInit(): void {
-        
+
     }
 
     saveAndClose(): void {

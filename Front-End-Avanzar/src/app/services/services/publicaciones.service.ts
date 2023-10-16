@@ -8,7 +8,7 @@ import { Publicacion, PublicacionA, PublicacionB } from '../models/publicaciones
 })
 export class PublicacionesService {
 
-  private baseUrl = 'http://localhost:8080/api/publicaciones'; // Cambia la URL a la de tu servidor
+  private baseUrl = 'http://164.90.153.70:8080/api/publicaciones'; // Cambia la URL a la de tu servidor
 
   constructor(private http: HttpClient) { }
 

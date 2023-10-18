@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.PostConstruct;
 import java.util.List;
 
-@CrossOrigin(origins = {"http://164.90.153.70:4200"})
+@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/categoriaServicio")
 public class CategoriaServicioController {

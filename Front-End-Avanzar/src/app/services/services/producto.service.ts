@@ -7,7 +7,7 @@ import { catchError, map, Observable, ReplaySubject, tap, throwError } from 'rxj
     providedIn: 'root'
   })
   export class ProductosService {
-    private url: string = 'http://164.90.153.70:8080/api/productos';
+    private url: string = 'https://164.90.153.70:8080/api/productos';
 
     constructor(private http: HttpClient) { }
     private handleError(error: any) {

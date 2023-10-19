@@ -8,7 +8,7 @@ import { Vendedor } from '../models/vendedora';
 })
 export class VendedorService {
 
-  private baseUrl = 'http://164.90.153.70:8080/api/vendedor'; // Cambia la URL a la de tu servidor
+  private baseUrl = 'https://164.90.153.70:8080/api/vendedor'; // Cambia la URL a la de tu servidor
 
   constructor(private http: HttpClient) { }
 

@@ -258,7 +258,7 @@ export class ModalProductosComponent implements OnInit {
     if (this.uploadedPhotos.length > 0) {
       imagenesSeleccionadas.push(...this.uploadedPhotos);
       const primeraImagen = imagenesSeleccionadas[0];
-      const baseUrl = 'http://164.90.153.70:8080';
+      const baseUrl = 'https://164.90.153.70:8080';
       const urlCompleta = `${baseUrl}/api/publicaciones/${primeraImagen.name}`;
       this.producto.miniaturaProducto = urlCompleta;
     }

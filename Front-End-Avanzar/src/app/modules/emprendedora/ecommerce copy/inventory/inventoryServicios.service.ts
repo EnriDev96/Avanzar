@@ -79,7 +79,7 @@ export class InventoryServiceServicios {
             )
             .subscribe((vendedora: Vendedor) => {
                 const vendedorId = vendedora.idVendedor;
-                const url = `http://164.90.153.70:8080/api/publicaciones/listaPublicacionesXServicios/${vendedorId}`;
+                const url = `https://164.90.153.70:8080/api/publicaciones/listaPublicacionesXServicios/${vendedorId}`;
                 this._httpClient.get<InventarioPublicaciones[]>(url)
                     .subscribe((data) => {
                         this._publicaciones.next(data); // Actualiza el BehaviorSubject con los datos obtenidos
@@ -100,7 +100,7 @@ export class InventoryServiceServicios {
      * Get categories
      */
     getCategoriesServicio(): Observable<CategoriaServicio[]> {
-        return this._httpClient.get<CategoriaServicio[]>('http://164.90.153.70:8080/api/categoriaServicio/listar').pipe(
+        return this._httpClient.get<CategoriaServicio[]>('https://164.90.153.70:8080/api/categoriaServicio/listar').pipe(
             tap((categories) => {
                 this._categoriesServicio.next(categories);
             }),
@@ -108,7 +108,7 @@ export class InventoryServiceServicios {
     }
 
     getCategoriesPublicacion(): Observable<CategoriaPublicacion[]> {
-        return this._httpClient.get<CategoriaPublicacion[]>('http://164.90.153.70:8080/api/categoria/listar').pipe(
+        return this._httpClient.get<CategoriaPublicacion[]>('https://164.90.153.70:8080/api/categoria/listar').pipe(
             tap((categories) => {
                 this._categoriesPublicacion.next(categories);
             }),
@@ -142,7 +142,7 @@ export class InventoryServiceServicios {
             .set('search', search);
 
         return this._httpClient
-            .get<{ pagination: InventoryPagination; servicios: InventarioPublicaciones[] }>('http://164.90.153.70:8080/api/publicaciones/listar', {
+            .get<{ pagination: InventoryPagination; servicios: InventarioPublicaciones[] }>('https://164.90.153.70:8080/api/publicaciones/listar', {
                 params: params
             })
             .pipe(
@@ -207,7 +207,7 @@ export class InventoryServiceServicios {
 
         return this.publicaciones$.pipe(
             take(1),
-            switchMap(publicaciones => this._httpClient.post<InventarioPublicaciones>('http://164.90.153.70:8080/api/publicaciones/registrarConFoto', formData, { headers: headers }).pipe(
+            switchMap(publicaciones => this._httpClient.post<InventarioPublicaciones>('https://164.90.153.70:8080/api/publicaciones/registrarConFoto', formData, { headers: headers }).pipe(
                 map((newPublicacion) => {
                     // Update the products with the new product
                     this._publicaciones.next([newPublicacion, ...publicaciones]);
@@ -222,7 +222,7 @@ export class InventoryServiceServicios {
     updatePublicacion(id: number, publicacion: InventarioPublicaciones): Observable<InventarioPublicaciones> {
         return this.publicaciones$.pipe(
             take(1),
-            switchMap(publicaciones => this._httpClient.put<InventarioPublicaciones>(`http://164.90.153.70:8080/api/publicaciones/actualizar/${id}`, publicacion
+            switchMap(publicaciones => this._httpClient.put<InventarioPublicaciones>(`https://164.90.153.70:8080/api/publicaciones/actualizar/${id}`, publicacion
             ).pipe(
                 map((updatedPublicacion) => {
                     // Find the index of the updated product
@@ -254,7 +254,7 @@ export class InventoryServiceServicios {
 
 
     deletePublicacion(id: number): Observable<boolean> {
-        return this._httpClient.put<boolean>(`http://164.90.153.70:8080/api/publicaciones/eliminar/${id}`, null).pipe(
+        return this._httpClient.put<boolean>(`https://164.90.153.70:8080/api/publicaciones/eliminar/${id}`, null).pipe(
             switchMap(isDeleted => {
                 if (isDeleted) {
                     // Eliminación exitosa, actualiza la lista

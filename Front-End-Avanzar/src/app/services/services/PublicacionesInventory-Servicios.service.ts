@@ -48,14 +48,14 @@ export class PublicacionesInventoryServicios
     // -----------------------------------------------------------------------------------------------------
 
     listarServicio(): void {
-        this._httpClient.get<InventarioPublicaciones[]>("http://164.90.153.70:8080/api/publicaciones/listarServicio")
+        this._httpClient.get<InventarioPublicaciones[]>("https://164.90.153.70:8080/api/publicaciones/listarServicio")
           .subscribe((data) => {
             this._publicaciones.next(data); // Actualiza el BehaviorSubject con los datos obtenidos
           });
       }
 
       obtenerListaPublicacionesXServicio(): Observable<InventarioPublicaciones[]> {
-        return this._httpClient.get<InventarioPublicaciones[]>("http://164.90.153.70:8080/api/publicaciones/listarServicio")
+        return this._httpClient.get<InventarioPublicaciones[]>("https://164.90.153.70:8080/api/publicaciones/listarServicio")
           .pipe(
             catchError(this.handleError)
           );

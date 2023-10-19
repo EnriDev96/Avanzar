@@ -8,7 +8,7 @@ import { CategoriaPublicacion } from '../models/categoria';
 })
 export class CategoriaPublicacionService {
 
-  private baseUrl = 'http://164.90.153.70:8080/api/categoria'; // Cambia la URL a la de tu servidor
+  private baseUrl = 'https://164.90.153.70:8080/api/categoria'; // Cambia la URL a la de tu servidor
 
   constructor(private http: HttpClient) { }
 

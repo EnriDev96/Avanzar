@@ -8,7 +8,7 @@ import { CategoriaServicio } from 'app/modules/emprendedora/ecommerce copy/inven
 })
 export class CategoriaServicioService {
 
-  private baseUrl = 'http://164.90.153.70:8080/api/categoriaServicio';
+  private baseUrl = 'https://164.90.153.70:8080/api/categoriaServicio';
 
   constructor(private http: HttpClient) { }
 
